@@ -2,7 +2,7 @@
 
 int main() {
     // Variáveis para a primeira carta
-    char estado1 ;
+    char estado1[50]; // Alterado para permitir o nome completo do estado
     char codigo1[4]; 
     char cidade1[50];
     int populacao1;
@@ -11,7 +11,7 @@ int main() {
     int turisticos1;
 
     // Variáveis para a segunda carta
-    char estado2;
+    char estado2[50]; // Alterado para permitir o nome completo do estado
     char codigo2[4];
     char cidade2[50];
     int populacao2;
@@ -21,8 +21,8 @@ int main() {
 
     // Lendo os dados da primeira carta
     printf("=== CARTA 1 ===\n");
-    printf("Digite o estado da carta 1 (A-H):\n");
-    scanf(" %s", &estado1);
+    printf("Digite o estado da carta 1 (ex: São Paulo):\n");
+    scanf(" %49[^\n]", estado1); // Lê o nome completo do estado
     while(getchar() != '\n'); // Limpa o buffer do teclado
 
     printf("\nDigite o codigo da carta 1 (ex: A01):\n");
@@ -51,8 +51,8 @@ int main() {
 
     // Lendo os dados da segunda carta
     printf("\n=== CARTA 2 ===\n");
-    printf("Digite o estado da carta 2 (A-H):\n");
-    scanf(" %s", &estado2);
+    printf("Digite o estado da carta 2 (ex: Rio de Janeiro):\n");
+    scanf(" %49[^\n]", estado2); // Lê o nome completo do estado
     while(getchar() != '\n');
 
     printf("\nDigite o codigo da carta 2 (ex: B02):\n");
@@ -81,7 +81,7 @@ int main() {
 
     // Mostrando os dados da primeira carta
     printf("\n=== CARTA 1 ===\n");
-    printf("Estado: %c\n", estado1);
+    printf("Estado: %s\n", estado1); // Alterado para %s para imprimir o nome completo do estado
     printf("Código: %s\n", codigo1);
     printf("Cidade: %s\n", cidade1);
     printf("População: %d\n", populacao1);
@@ -91,7 +91,7 @@ int main() {
 
     // Mostrando os dados da segunda carta
     printf("\n=== CARTA 2 ===\n");
-    printf("Estado: %c\n", estado2);
+    printf("Estado: %s\n", estado2); // Alterado para %s para imprimir o nome completo do estado
     printf("Código: %s\n", codigo2);
     printf("Cidade: %s\n", cidade2);
     printf("População: %d\n", populacao2);
